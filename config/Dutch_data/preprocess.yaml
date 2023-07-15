@@ -1,0 +1,31 @@
+dataset: "Dutch_data"
+
+path:
+  corpus_path: "//scratch/s3683850/FastSpeech2/dutch_files/" 
+  lexicon_path: "//scratch/s3683850/FastSpeech2/lexicon/dutch-dictionary.txt" 
+  raw_path: "//scratch/s3683850/FastSpeech2/raw_data/Dutch_data/" 
+  preprocessed_path: "//scratch/s3683850/FastSpeech2/preprocessed_data/Dutch_data/" 
+
+
+preprocessing:
+  val_size: 512
+  text:
+    text_cleaners: ["english_cleaners"]
+    language: "en"
+  audio:
+    sampling_rate: 22050
+    max_wav_value: 32767 #32768.0 # change to 32767
+  stft:
+    filter_length: 1024
+    hop_length: 256
+    win_length: 1024
+  mel:
+    n_mel_channels: 80
+    mel_fmin: 0
+    mel_fmax: 8000 # please set to 8000 for HiFi-GAN vocoder, set to null for MelGAN vocoder
+  pitch:
+    feature: "phoneme_level" # support 'phoneme_level' or 'frame_level'
+    normalization: True
+  energy:
+    feature: "phoneme_level" # support 'phoneme_level' or 'frame_level'
+    normalization: True
