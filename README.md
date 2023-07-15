@@ -1,6 +1,6 @@
 # Sarcastic_Transformation
 
-This is the code that is used to generate sarcastic speech using the FastSpeech2 model found [here](https://github.com/ming024/FastSpeech2). Additionally, the [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/) is used to align the speech data. The speech data can be found [here](https://www.kaggle.com/datasets/bryanpark/dutch-single-speaker-speech-dataset). The files that are already synthesized can be found in `/synthesized_speech`.
+This is the code that is used to generate sarcastic speech using the FastSpeech2 model by ming024 and can be found [here](https://github.com/ming024/FastSpeech2). This code completely used with a few changes and additions to include Dutch synthesize. Additionally, the [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/) is used to align the speech data. The speech data can be found [here](https://www.kaggle.com/datasets/bryanpark/dutch-single-speaker-speech-dataset). The files that are already synthesized can be found in `/synthesized_speech`.
 
 
 ## Corpus preparation
