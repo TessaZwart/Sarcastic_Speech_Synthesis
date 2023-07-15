@@ -59,4 +59,4 @@ The parameters for `--duration-control`, `--pitch-control`, and `--energy-contro
 
 `sbatch job_sarcastic.sh`
 
-The synthesized speech will be placed in ~/output/results
+The synthesized speech will be placed in `~/output/result`.
