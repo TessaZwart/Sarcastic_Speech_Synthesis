@@ -37,9 +37,9 @@ In `my_corpus_aligned` the aligned TextGrids can be found. These TextGrids are u
 
 
 ## FastSpeech2 
-For the FastSpeech2 model, it is important to use a GPU. For this project [Hábrók](https://wiki.hpc.rug.nl/habrok/start) is used. Add the files of this repository to Hábrók to be able to use the model.
+For the FastSpeech2 model, it is important to use a GPU. For this project [Hábrók](https://wiki.hpc.rug.nl/habrok/start) is used. Add the files of this repository to Hábrók to be able to use the model. Additionally, a folder `dutch_files` need to be added with the data downloaded from https://www.kaggle.com/datasets/bryanpark/dutch-single-speaker-speech-dataset.
 
-Various jobs are created for each step. These jobs can be runned individually in order to do each step towards synthesizing separately.
+Various jobs are created for each step. These jobs can be runned individually to do each step towards synthesizing separately.
 
 First, the model need to be prepared for alignment and preprocessed. This is done using the following lines of code:
 
@@ -47,8 +47,7 @@ First, the model need to be prepared for alignment and preprocessed. This is don
 
 `sbatch job_preprocess.sh`
 
-
-Note that in this repository these steps are already done. So you can directly start with training. To train the model, the following code is used:
+To train the model, the following code is used (this can take around 16 hours):
 
 `sbatch job_train.sh`
 
@@ -56,6 +55,8 @@ The trained model can finally be used to synthesize the speech files. The text c
 
 `sbatch job_sincere.sh`
 
-To manipulate the speech the speech values can be added to the line of code. In this example code three type of sentences are synthesized and manipulated to sarcastic speech. 
+The parameters for `--duration-control`, `--pitch-control`, and `--energy-control` can be changed to manipulate the speech. In this example code three type of sentences are synthesized and manipulated to sarcastic speech. 
 
 `sbatch job_sarcastic.sh`
+
+The synthesized speech will be placed in ~/output/results
