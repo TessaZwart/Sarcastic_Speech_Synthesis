@@ -1,6 +1,6 @@
 # Sarcastic_Transformation
 
-This is the code that is used to generate sarcastic speech using the FastSpeech2 model found [here](https://github.com/ming024/FastSpeech2). Additionally, the [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/) is used to align the speech data. The speech data can be found [here](https://www.kaggle.com/datasets/bryanpark/dutch-single-speaker-speech-dataset).
+This is the code that is used to generate sarcastic speech using the FastSpeech2 model found [here](https://github.com/ming024/FastSpeech2). Additionally, the [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/) is used to align the speech data. The speech data can be found [here](https://www.kaggle.com/datasets/bryanpark/dutch-single-speaker-speech-dataset). The files that are already synthesized can be found in `/synthesized_speech`.
 
 
 ## Corpus preparation
@@ -17,7 +17,7 @@ This environment is activated using:
 
 `conda activate aligner`
 
-Then, an acoustic model was created (change ~ to the folder name you want to add the files to):
+Then, an acoustic model was created:
 
 `mfa train ~/corpus ~/dictionary.txt ~/new_acoustic_model.zip`
 
@@ -37,7 +37,7 @@ In `my_corpus_aligned` the aligned TextGrids can be found. These TextGrids are u
 
 
 ## FastSpeech2 
-For the FastSpeech2 model, it is important to use a GPU. For this project [Hábrók](https://wiki.hpc.rug.nl/habrok/start) is used. Add the files of this repository to Hábrók to be able to use the model. Additionally, a folder `dutch_files` need to be added with the data downloaded from https://www.kaggle.com/datasets/bryanpark/dutch-single-speaker-speech-dataset.
+For the FastSpeech2 model, it is important to use a GPU. For this project [Hábrók](https://wiki.hpc.rug.nl/habrok/start) is used. Add the files of this repository to Hábrók to be able to use the model. Additionally, a folder `dutch_files` need to be added with the data downloaded from https://www.kaggle.com/datasets/bryanpark/dutch-single-speaker-speech-dataset. The TextGrid files created using the Montreal Forced Aligner need to be added to the folder `preprocessed_data/Dutch_data/`.
 
 Various jobs are created for each step. These jobs can be runned individually to do each step towards synthesizing separately.
 
